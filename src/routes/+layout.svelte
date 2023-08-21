@@ -1,16 +1,17 @@
 <script>
 	import '../app.css';
+    import { base } from "$app/paths";
 	import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from 'flowbite-svelte';
 	import { Footer, FooterCopyright, FooterLinkGroup, FooterLink } from 'flowbite-svelte';
-    let copyrightMessage = ""
+    let copyrightMessage = "";
 </script>
 
 <header class="bg-white">
 	<div class="mx-auto max-w-7xl py-2 sm:px-6 lg:px-8">
 		<Navbar let:hidden let:toggle>
-			<NavBrand href="/">
+			<NavBrand href="{base}/">
 				<img
-					src="/images/uca-logo_no-bg.png"
+					src="{base}/images/uca-logo_no-bg.png"
 					class="mr-3 h-6 sm:h-9"
 					alt="Uniting Church of Australia Logo"
 				/>
@@ -20,11 +21,11 @@
 			</NavBrand>
 			<NavHamburger on:click={toggle} />
 			<NavUl {hidden}>
-				<NavLi href="/">Home</NavLi>
-				<NavLi href="/about">About</NavLi>
-				<NavLi href="/blog">Blog</NavLi>
-				<NavLi href="/events">Events</NavLi>
-				<NavLi href="/contact">Contact</NavLi>
+				<NavLi href="{base}/">Home</NavLi>
+				<NavLi href="{base}/">About</NavLi>
+				<NavLi href="{base}/">Blog</NavLi>
+				<NavLi href="{base}/">Events</NavLi>
+				<NavLi href="{base}/">Contact</NavLi>
 			</NavUl>
 		</Navbar>
 	</div>
@@ -33,13 +34,13 @@
 <slot />
 
 <Footer>
-	<FooterCopyright href="/" by="Uniting Church of Australia" year={2023} {copyrightMessage} />
+	<FooterCopyright href="{base}/" by="Uniting Church of Australia" year={2023} {copyrightMessage} />
 	<FooterLinkGroup
 		ulClass="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"
 	>
-		<FooterLink href="/">About</FooterLink>
-		<FooterLink href="/">Privacy Policy</FooterLink>
-		<FooterLink href="/">Licensing</FooterLink>
-		<FooterLink href="/">Contact</FooterLink>
+		<FooterLink href="{base}/">About</FooterLink>
+		<FooterLink href="{base}/">Privacy Policy</FooterLink>
+		<FooterLink href="{base}/">Licensing</FooterLink>
+		<FooterLink href="{base}/">Contact</FooterLink>
 	</FooterLinkGroup>
 </Footer>

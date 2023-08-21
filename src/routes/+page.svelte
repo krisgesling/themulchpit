@@ -1,11 +1,39 @@
 <script>
+    import { base } from "$app/paths";
+
 	import { Banner } from 'flowbite-svelte';
 	import { Icon } from 'flowbite-svelte-icons';
 	import { Carousel } from 'flowbite-svelte';
-	import { images } from './imageData/+server.js';
 
 	let showThumbs = false;
 	let showCaptions = false;
+
+    export const images = [
+    {
+        id: 0,
+        name: 'Cristina Gottardi',
+        imgurl: `${base}/images/carousel/2.jpg`,
+        attribution: '2'
+    },
+    {
+        id: 2,
+        name: 'Johannes Plenio',
+        imgurl: `${base}/images/carousel/3.jpg`,
+        attribution: '3'
+    },
+    {
+        id: 3,
+        name: 'Jonatan Pie',
+        imgurl: `${base}/images/carousel/4.jpg`,
+        attribution: '4'
+    },
+    {
+        id: 4,
+        name: 'Mark Harpur',
+        imgurl: `${base}/images/carousel/5.jpg`,
+        attribution: '5'
+    }
+];
 </script>
 
 <div class="bg-white">
